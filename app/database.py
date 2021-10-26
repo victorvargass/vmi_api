@@ -2,7 +2,7 @@ from bson.objectid import ObjectId
 import pandas as pd
 import math
 
-data_folder = 'app/server/static/'
+data_folder = 'app/static/'
 age_equivalence = pd.read_csv(data_folder + 'age_equivalence.csv', header=[0])
 vmi = pd.read_csv(data_folder + '1_natural_vmi_to_standard.csv', header=[0,1])
 visual = pd.read_csv(data_folder + '2_natural_visual_to_standard.csv', header=[0,1])
