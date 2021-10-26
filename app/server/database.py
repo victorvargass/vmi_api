@@ -47,11 +47,14 @@ def get_percentile_values(df, standard):
     return percentile
 
 def get_performance_level(df, standard):
-    standard = int(standard)
-    for i, standard_interval in enumerate(df.standard):
-        values = standard_interval.split('-')
-        if (standard >= int(values[0]) and standard <= int(values[1])):
-            return(df.performance.values[i])
+    try:
+        standard = int(standard)
+        for i, standard_interval in enumerate(df.standard):
+            values = standard_interval.split('-')
+            if (standard >= int(values[0]) and standard <= int(values[1])):
+                return(df.performance.values[i])
+    except:
+        return '-'
 
 def vmi_helper(vmi) -> dict:
     return {
